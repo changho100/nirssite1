@@ -1,0 +1,55 @@
+{% extends "intro_item.html" %}
+
+{% block contents %}
+<div class="tab">
+  <button {% if tab_id == '1' %}class="tablinks active" {% else %} class="tablinks" {% endif %} onclick="openCity(event, 'first')">건물 운영 관리 솔루션</button>
+  <button {% if tab_id == '2' %}class="tablinks active" {% else %} class="tablinks" {% endif %} onclick="openCity(event, 'second')">기가 에너지 프리미엄</button>
+  <div style="float:right;">
+      <a href="/intro/items"><img src="/static/img/solution_button.png" width="80px" height="40px"/></a>
+  </div>
+</div>
+
+<div id="first" {% if tab_id == '1' %}class="tabcontent_active" {% else %} class="tabcontent" {% endif %}>
+  <ul class="sub_item">
+    <li><div onclick="imagetab(event, 1, 0)" class="sub_tab1" style="border-bottom:2px solid #17345a;">통합 SI</div></li>
+    <li style="border-right:none;"><div onclick="imagetab(event, 1, 1)" class="sub_tab1">FMS(시설관리시스템)</div></li>
+  </ul>
+  <div style="overflow-y:scroll; height:670px; width:880px; margin-left:60px;" id="divid1">
+    <div class="1">
+      <div style="float:right; margin-right:50px;">
+        <a href="/static/video/sifms.MP4" target="_blank"><img src="/static/video/video.png"/></a>
+      </div>
+      <img src="/static/img/intro/SI_intro.png" name="1-1" />
+    </div>
+    <div class="1" style="display:none;">
+      <div style="float:right; margin-right:50px;">
+        <a href="/static/video/sifms.MP4" target="_blank"><img src="/static/video/video.png"/></a>
+      </div>
+      <img src="/static/img/intro/FMS_intro.png" name="1-2" />
+    </div>
+  </div>
+</div>
+
+<div id="second" {% if tab_id == '2' %}class="tabcontent_active" {% else %} class="tabcontent" {% endif %}>
+  <ul class="sub_item">
+    <li><div onclick="imagetab(event, 2, 0)" class="sub_tab2">GIGA energy manager Premium</div></li>
+    <li style="border-right:none;"><div onclick="imagetab(event, 2, 1)" class="sub_tab2")">에너지 컨설팅 툴</div></li>
+  </ul>
+  <div style="overflow-y:scroll; height:670px; width:880px; margin-left:60px;" id="divid2">
+    <div class="2">
+      <div style="float:right; margin-right:50px;">
+        <a href="/static/video/energy.MP4" target="_blank"><img src="/static/video/video.png"/></a>
+      </div>
+      <img src="/static/img/intro/EnergyPremium_intro.png" name="2-1" />
+    </div>
+    <div class="2" style="display:none;">
+         <div style="float:right; margin-right:50px;">
+        <a href="/static/video/energy.MP4" target="_blank"><img src="/static/video/video.png"/></a>
+      </div>
+      <img src="/static/img/intro/EnergyConsTool_intro.png" name="2-2" />
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

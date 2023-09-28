@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<style>
+    .intro {position:absolute; z-index:-1;}
+    .left {background:#17345a; width:200px; height:750px; float:left;}
+    .left_menu {list-style-type:none; padding-top:20px; padding-left:0px; font-size:11pt; font-family:맑은 고딕;
+                font-weight:bold; font-color:#fff;}
+    .left_menu li {margin:0px; line-height:40px; font-color:#fff; padding-left:20px; }
+    .left_menu li a {color:#fff;}
+    .left_menu li a:hover {color:#d22730;}
+    .left_menu li ul {display:none;  list-style-type:none; margin-left:-60px; font-size:10pt;}
+
+    .left_menu li ul li {line-height:35px;  padding-left:35px;}
+
+    .intro_contents {width:947px; height:750px; overflow:auto; float:right;}
+    .contents {padding:30px;}
+    .qna_table {border-collapse:collapse; line-height:1; border-top: 2px solid #4c4c4e; border-bottom: 2px solid #4c4c4e; width:880px; font-family:맑은 고딕}
+    .qna_table thead th {padding:10px; font-weight:bold; border-right:1px solid #ccc;}
+    .qna_table tr {text-align:center;}
+    .qna_table td {padding:10px; border-bottom:1px solid #ccc; border-top:1px solid #ccc; border-left:1px solid #ccc; height:50px; vertical-align:center; color:white;}
+
+    .smn_table {border-collapse:collapse; line-height:1.5; border-top: 2px solid #4c4c4e; border-bottom: 2px solid #4c4c4e; font-family:맑은 고딕; margin-top:15px;}
+    .smn_table thead th {padding:10px; font-weight:bold; border-right:1px solid #ccc;}
+    .smn_table tr {text-align:center;}
+    .smn_table td {border-bottom:1px solid #ccc; border-top:1px solid #ccc; border-left:1px solid #ccc; vertical-align:center; height:100px;}
+    .solution {margin-left:30px;}
+    input {height:30px; margin:0;}
+
+    div.tab {
+        overflow: hidden;
+        border-bottom: 1px solid #ccc;
+        background-color: #fff;
+        margin-left:0px;
+        width:880px;
+        font-family:맑은 고딕;
+        font-weight:bold;
+    }
+
+    div.tab button {
+        background-color: #f1f1f1;
+        float: left;
+        border:1px solid #ccc;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size:11pt;
+    }
+
+    div.tab button:hover {
+        background-color: #ddd;
+    }
+
+    div.tab button.active {
+        background-color: #ccc;
+    }
+
+    .tabcontent {
+
+        padding: 6px 0px;
+        display: none;
+        border-top: none;
+    }
+
+    .tabcontent_active {
+
+        padding: 6px 0px;
+        border-top: none;
+    }
+    .sub_item {float:left; text-align:left; margin-top:0; margin-left:46px; margin-bottom:15px; list-style-type:none; font-family:맑은 고딕;}
+    .sub_item li {float:left; background:none; text-align:center; border-right:2px solid #ccc; padding: 10px 10px; background:#f1f1f1;}
+    .sub_item li div {font-size:10pt;}
+    .sub_item li:hover {background:#ddd;}
+    
+    .insert_table {border-collapse:collapse; border-top: 2px solid #a3acad; border-bottom: 2px solid #a3acad; width:800px; font-family:맑은 고딕; line-height:2;}
+    .insert_table th {background:#f8f8f8; text-align:center; font-size:13pt; width: 180px; border-bottom:1px solid #ccc;  height:50px;}
+    .insert_table td {background:#f8f8f8; border-bottom:1px solid #ccc}
+    .input {height:35px; width:600px; background:#fff; text-align:top; border:1px solid #ccc; padding-left:10px;}
+    .reply_table {border-collapse:collapse; border-top: 2px solid #a3acad; border-bottom: 2px solid #a3acad; width:800px; font-family:맑은 고딕; line-height:2;}
+    .reply_table td {text-align:left;  height:30px;}
+
+    .insert_table {border-collapse:collapse; border-top: 2px solid #a3acad; border-bottom: 2px solid #a3acad; width:800px; font-family:맑은 고딕; line-height:2;}
+    .insert_table th {background:#f8f8f8; text-align:center; font-size:13pt; width:180px; border-bottom:1px solid #ccc;  height:50px;}
+    .insert_table td {background:#f8f8f8; border-bottom:1px solid #ccc}
+    .insert_table input {line-height:2; height:30px; align:top; width:600px;}
+    .insert_table select {line-height:2; height:35px; align:top; width:600px;}    
+</style>
+ 
+ 
+<script type="text/javascript">
+	function vote() {
+        if(document.getElementById('email').value=="") {
+            alert("메일주소를 입력해주세요.");
+        } else {
+            document.getElementById('frm').submit();
+        }
+    }
+</script>
+
+<body>
+
+{% load static %}
+{% include "mpage/top.html" %}
+
+<div class="intro">
+
+    <div class="left">
+        {% block left_menu %}
+        <div style="color:white; font-family:맑은 고딕; background:#294860;
+                    font-size:13pt; width:200px; height:50px; text-align:center; display:table-cell;
+                    vertical-align:middle; border-bottom:4px solid #091d3e;">
+            승차 예약
+        </div>
+         <ul class="left_menu" style="margin:0">
+             <li style="background:#091d3e;" ><a href="/selfcar" style="color:#fff;">예약 확인</a></li>
+         </ul>
+        {% endblock %}
+    </div>
+    
+    <div class="intro_contents">
+        <div id="blank" style="height:10px;"></div>
+        <div class="contents">
+        
+            {% block contents %}
+            
+            <div ><h2 style="font-family:맑은 고딕">예약 확인</h2></div>
+			
+			<p><font color=red>예약을 확인 하거나 취소 할 수 있습니다</font>
+
+            <div id="first" class="tabcontent_active">
+            
+  	<form action="/selfcar/exe_search_selfcar" method="post" id="frm">
+  
+      {% csrf_token %}
+      
+      	<table class="insert_table">
+          	<tr>
+              	<th>메일주소</th>
+              		<td>
+                  		<input id="email" name="email" type="text" value="{{email}}" required style="width:400px;"><button onclick="vote()">조회</button>
+              		</td>
+			</tr>
+      	</table>
+
+      	<table class="insert_table" style="margin-top:30px;">
+      	
+          	{% if count == 0 %}
+          	<tr>
+            	<td style="text-align:center;">신청하신 예약이 없습니다.</td>
+          	</tr>
+          	{% elif count > 0 %}
+          		{% for selfcar in selfcar_list %}
+          		<tr>
+              		<td style="padding-left:60px;">{{selfcar.name}}</td>
+              		
+              		<td style="padding-left:60px;">{{selfcar.email}}</td>
+              		
+              		{% if selfcar.reserv_day == 1 %}
+              			<td style="padding-left:60px;">7월25일</td>
+              		{% elif selfcar.reserv_day == 2 %}
+              			<td style="padding-left:60px;">7월26일</td>
+              		{% elif selfcar.reserv_day == 3 %}
+              			<td style="padding-left:60px;">7월27일</td>
+              		{% else %}
+              			<td style="padding-left:60px;">7월28일</td>
+              		{% endif %}      
+              		            	
+              		{% if selfcar.reserv_time == 1 %}
+              			<td style="padding-left:60px;">11:00~11:30</td>
+              		{% elif selfcar.reserv_time == 2 %}
+              			<td style="padding-left:60px;">11:30~12:30</td>
+              		{% elif selfcar.reserv_time == 3 %}
+              			<td style="padding-left:60px;">15:00~15:30</td>
+              		{% else %}
+              			<td style="padding-left:60px;">15:30~16:00</td>
+              		{% endif %}               		            	
+
+              		<td style="padding-left:60px;"><a href="/selfcar/exe_delete_selfcar/{{selfcar.id}}" style="float:right; margin-right:40px;">예약삭제</a></td>
+          		</tr>
+          		{% endfor %}
+          	{% endif %}
+      	</table>
+  	</form>
+            
+            </div>
+
+            {% endblock %}
+        </div>
+    </div>
+    <div>
+        <img src="{% static 'img/main_foot.png' %}"/>
+    </div>
+</div>
+
+</body>
+</html>

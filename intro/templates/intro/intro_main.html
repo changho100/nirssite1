@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+ <style>
+    .intro {position:absolute; z-index:-1;}
+    .left {background:#17345a; width:200px; height:800px; float:left;}
+    .left_menu {list-style-type:none; padding-top:20px; padding-left:0px; font-size:11pt; font-family:맑은 고딕;
+                font-weight:bold; font-color:#fff;}
+    .left_menu li {margin:0px; line-height:40px; font-color:#fff; padding-left:20px; }
+    .left_menu li a {color:#fff;}
+    .left_menu li a:hover {color:#d22730;}
+    .left_menu li ul {display:none;  list-style-type:none; margin-left:-60px; font-size:10pt;}
+
+    .left_menu li ul li {line-height:35px;  padding-left:35px;}
+
+    .intro_contents {width:947px; height:800px; text-align:center; overflow:auto; float:right;}
+ </style>
+<body>
+{% load static %}
+{% include "mpage/top.html" %}
+<div class="intro">
+    <div class="left">
+        <div style="color:white; font-family:맑은 고딕; background:#294860;
+                    font-size:13pt; width:200px; height:50px; text-align:center; display:table-cell;
+                    vertical-align:middle; border-bottom:4px solid #091d3e;">
+            행사 소개
+        </div>
+         <ul class="left_menu" style="margin:0">
+             <li style="background:#091d3e;" ><a href="/intro/" style="color:#fff;" >자율주행차<br/></a></li>
+             <li><a href="/intro/map">운행 경로</a></li>
+         </ul>
+    </div>
+    <div class="intro_contents">
+        <div id="blank" style="height:30px;"></div>
+        <div class="contents">
+            {% block contents %}
+            <img src="{% static 'img/intro_img.png' %}" usemap="#intro_img"/>
+            <map name="intro_img">
+                <area shape="rect" alt="" title="" coords="663,543,746,572" href="/reservation" target="" />
+                <area shape="rect" alt="" title="" coords="661,579,746,605" href="/reservation/seminar" target="" />
+            </map>
+            {% endblock %}
+        </div>
+
+    </div>
+    <div>
+        <img src="{% static 'img/main_foot.png' %}"/>
+    </div>
+</div>
+
+</body>
+</html>

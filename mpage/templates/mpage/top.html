@@ -1,0 +1,44 @@
+<head>
+    <meta charset="UTF-8">
+    <title>운영자동화시스템</title>
+</head>
+
+<style>
+    body {position:absolute; left:50%; margin-left:-573px; width:1147px;}
+    a:link {color:black; text-decoration:none;}
+    a:visited{color:black; text-decoration:none;}
+    .top {height:62px; border-bottom:2px solid #99a3a4;}
+    .top_menu {list-style-type:none; font-family:맑은 고딕; font-weight:bold; font-size:12pt; font-color:black; float:right; padding:0px; margin:0;
+                position:relative; bottom:0;}
+    .top_menu li {float:left; width:120px; margin-top:10px; padding:0; line-height:52px; background:none; text-align:center;}
+    .top_menu li a {margin:0; padding:0;}
+    .top_menu li a:hover {color:#d22730;}
+    .top_menu li ul {display:none; background:#fff; list-style-type:none; padding:0; margin:0; font-size:11pt;}
+    .top_menu li ul li {float:none; background:none; margin-top:0; padding:0; height:45px; line-height:45px; border: 1px solid #ccc; border-collapse:collapse;}
+    .top_menu li:hover ul {display:block; border-top:2px solid red}
+</style>
+
+{% load static %}     
+
+    <div class="top">
+        <div style="width:100px; float:left; background:#fff; padding-top:18px; padding-left:10px;">
+            <a href="/"><img src="{% static 'img/kt_logo.png' %}"/></a>
+        </div>
+        <div style="float:left; width:400px;">
+            <ul class="top_menu">
+                <li style="width:120px;"><a href="/intro/">행사 소개</a>
+                    <ul>
+                        <li style="width:120px;"><a href="/intro/">자율주행차</a></li>
+                        <li style="width:120px;"><a href="/intro/map">운행 경로</a></li>
+                    </ul>
+                </li>
+                <li style="width:120px;"><a href="/selfcar">승차 예약</a>
+                    <ul>
+                        <li style="width:120px;"><a a href="/selfcar">예약 현황</a></li>
+                        <li style="width:120px;"><a a href="/selfcar/selfcar_insert">예약 신청</a></li>
+                        <li style="width:120px;"><a href="/selfcar/selfcar_comf">예약 확인</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>

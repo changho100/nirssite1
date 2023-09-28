@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+ <style>
+    .intro {position:absolute; z-index:-1;}
+    .left {background:#17345a; width:200px; height:800px; float:left;}
+    .left_menu {list-style-type:none; padding-top:20px; padding-left:0px; font-size:11pt; font-family:맑은 고딕;
+                font-weight:bold; font-color:#fff;}
+    .left_menu li {margin:0px; line-height:40px; font-color:#fff; padding-left:20px; }
+    .left_menu li a {color:#fff;}
+    .left_menu li a:hover {color:#d22730;}
+    .left_menu li ul {list-style-type:none; margin-left:-60px; font-size:10pt;}
+
+    .left_menu li ul li {line-height:35px;  padding-left:35px;}
+
+    .intro_contents {width:947px; height:800px; text-align:center; overflow:auto; float:right;}
+    .map_table a:hover {color:red;}
+    .map_table {font-family:맑은 고딕; font-size:10pt; line-height:2.2; width:179px; font-weight:bold;  float:left;}
+ </style>
+<body>
+{% load static %}
+{% include "mpage/top.html" %}
+<div class="intro">
+    <div class="left">
+        <div style="color:white; font-family:맑은 고딕; background:#294860;
+                    font-size:13pt; width:200px; height:50px; text-align:center; display:table-cell;
+                    vertical-align:middle; border-bottom:4px solid #091d3e;">
+            행사 소개
+        </div>
+         <ul class="left_menu" style="margin:0">
+             <li><a href="/intro/">행사 안내<br/></a></li>
+             <li style="background:#091d3e;" ><a href="/intro/items" style="color:#fff;">전시 항목</a></li>
+             <li>
+                 <ul>
+                     <li ><a href="/intro/1/1">- Biz IoT</a></li>
+                     <li ><a href="/intro/2/1">- 차량/이동체</a></li>
+                     <li><a href="/intro/3/1">- Big Data</a></li>
+                     <li><a href="/intro/4/1">- 농업IoT</a></li>
+                     <li><a href="/intro/5/1">- 스마트에너지</a></li>
+                     <li><a href="/intro/6/1">- 데이터 시각화</a></li>
+                     <li><a href="/intro/7/1">- Biz 솔루션</a></li>
+                     <li><a href="/intro/8/1">- 통합 관제</a></li>
+                     <li><a href="/intro/9/1">- 차세대 NW</a></li>
+                     <li><a href="/intro/10/1">- AI</a></li>
+                 </ul>
+             </li>
+             <li><a href="/intro/map" >전시장 MAP</a></li>
+             <li><a href="/reservation/seminar">세미나</a></li>
+             <li><a href="/reservation">컨설팅/상담</a></li>
+             <li><a href="/votes/b_vote">솔루션 투표</a></li>
+             <li><a href="/question/">QnA</a></li>
+             <!--<li>
+                <ul>
+                    <li><a href="/question/">- 행사 진행</a></li>
+                    <li><a href="/question/solutionq">- 솔루션</a></li>
+                </ul>
+             </li>-->
+         </ul>
+    </div>
+    <div class="intro_contents" style="overflow:hidden;">
+        <div id="blank" style="height:80px;"></div>
+
+        <div class="contents">
+            {% block contents %}
+            <p style="text-align:center; font-family:맑은 고딕; font-weight:bold; font-size:16pt; margin-top:-20px;">전시 항목</p>
+            <div style="background-image:url('/static/img/intro_items.png'); width:850px; height:607px; margin-top:20px; margin-left:35px;">
+            <div style="width:850px; height:300px; padding-top:145px;">
+                <table class="map_table" style="">
+                    <tr>
+                        <td><a href="/intro/1/1">IoTMakers 3.0</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/1/2">소물인터넷 서비스</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/1/3">Vertical IoT 서비스</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/4/1">농업 IoT</a></td>
+                    </tr>
+                </table>
+                <table class="map_table" style="margin-left:45px;">
+                    <tr>
+                        <td><a href="/intro/2/1">Connected Car</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/2/2">물류/Asset/Tracking</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/2/3">현대상용차 내비</a></td>
+                    </tr>
+                </table>
+                <table class="map_table" style="margin-left:43px;">
+                    <tr>
+                        <td><a href="/intro/7/1">Managed 서비스</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/7/2">IMS 통합관제</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/7/3">GiGA BILLs</a></td>
+                    </tr>
+                </table>
+                <table class="map_table" style="margin-left:45px;">
+                    <tr>
+                        <td><a href="/intro/10/1">AIBOT</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/10/2">HINT</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/10/3">AI Kiosk</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/10/4">지능형 사이니지</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div style="width:830px; height:200px; padding-top:17px; padding-left:115px;">
+                <table class="map_table" style="">
+                    <tr>
+                        <td><a href="/intro/5/1">건물 운영 관리 솔루션</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/5/2">기가 에너지 프리미엄</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/6/1">데이터시각화 솔루션</a></td>
+                    </tr>
+                </table>
+                <table class="map_table" style="margin-left:45px;">
+                    <tr>
+                        <td><a href="/intro/8/1">ARGOS 2.0</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/8/2">All-in Biz</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/9/1">Biz WiFi</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/9/2">One-Box</a></td>
+                    </tr>
+                </table>
+                <table class="map_table" style="margin-left:45px;">
+                    <tr>
+                        <td><a href="/intro/3/1">Grip</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/3/2">Trip</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/intro/3/3">위치최적화솔루션</a></td>
+                    </tr>
+                </table>
+            </div>
+            </div>
+            {% endblock %}
+        </div>
+
+    </div>
+    <div>
+        <img src="{% static 'img/main_foot.png' %}"/>
+    </div>
+</div>
+
+</body>
+</html>

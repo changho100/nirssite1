@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<!--<script type="text/javascript" src="http://jsgetip.appspot.com"></script>
+<script type="text/javascript">
+ alert(ip()); // IP Address
+ </script>-->
+<body>
+
+{% load static %}
+
+{% include "./top.html" %}
+
+    <div class="contents">
+        <div style="margin:0; padding:0; width:1147px; height:365px; background-image:url('{% static 'img/main_image1.png' %}');"></div>
+        <div style="margin-top:15px;">
+            <a href="/intro/" style="float:left; margin-left:-5px;"><img src="{% static 'img/main_button4.png' %}"/></a>
+            <a href="/reservation/seminar"><img src="{% static 'img/main_button5.png' %}" align="left"/></a>
+            <a href="/reservation"><img src="{% static 'img/main_button6.png' %}" align="left"/></a>
+            <a href="/votes/b_vote"><img src="{% static 'img/main_button7.png' %}" align="left"/></a>
+        </div>
+        <div><img src="{% static 'img/main_foot.png' %}"/></div>
+    </div>
+
+</body>
+</html>

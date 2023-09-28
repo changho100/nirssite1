@@ -1,0 +1,27 @@
+{% extends "intro_item.html" %}
+
+{% block contents %}
+<div class="tab">
+  <button {% if tab_id == '1' %}class="tablinks active" {% else %} class="tablinks" {% endif %} onclick="openCity(event, 'first')">KT GiGA Smart Farm</button>
+  <div style="float:right;">
+      <a href="/intro/items"><img src="/static/img/solution_button.png" width="80px" height="40px"/></a>
+  </div>
+</div>
+
+<div id="first" {% if tab_id == '1' %}class="tabcontent_active" {% else %} class="tabcontent" {% endif %}>
+  <div style="overflow-y:scroll; height:720px; width:880px; margin-left:60px;" id="divid1">
+    <div style="float:right; margin-right:50px;">
+      <a href="/static/video/farm.MP4" target="_blank"><img src="/static/video/video.png"/></a>
+    </div>
+    <img src="/static/img/intro/GiGASmartFarm_intro.png" />
+  </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

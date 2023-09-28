@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로드쇼</title>
+</head>
+<style>
+    body {position:absolute; left:50%; margin-left:-573px; width:1147px;}
+    a:link {color:black; text-decoration:none;}
+    a:visited{color:black; text-decoration:none;}
+    .top {height:62px; border-bottom:2px solid #99a3a4; margin-top:25px;}
+    .top_menu {list-style-type:none; font-family:맑은 고딕; font-weight:bold; font-size:20px; font-color:black; float:right; padding:0px; margin:0;
+                position:relative; bottom:0;}
+    .top_menu li {float:left; width:120px; margin-top:10px; padding:0; line-height:52px; background:none; text-align:center;}
+    .top_menu li a {margin:0; padding:0;}
+    .top_menu li a:hover {color:#d22730;}
+    .top_menu li ul {display:none; background:#fff; list-style-type:none; padding:0; margin:0;}
+    .top_menu li ul li {float:none; background:none; margin-top:0; padding:0; height:45px; font-weight:600; line-height:45px;}
+    .top_menu li:hover ul {display:block; border-top:2px solid red}
+
+
+</style>
+
+    <div class="top">
+        <div style="width:200px; float:left; background:#fff; padding-top:18px; padding-left:15px;">
+            {% load static %}     <a href="/"><img src="{% static 'img/kt_logo.png' %}"/></a>
+        </div>
+        <div style="float:right; width:728px;">
+            <ul class="top_menu">
+                <li><a href="/intro/">로드쇼 소개</a>
+                    <ul>
+                        <li><a href="/intro/">전시 안내</a></li>
+                        <li><a href="/intro/2">전시 항목</a></li>
+                        <li><a href="#">전시장 MAP</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">사전 예약</a>
+                    <ul>
+                        <li><a href="#">사전 예약</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">솔루션 투표</a>
+                    <ul>
+                        <li><a href="#">사전 투표</a></li>
+                        <li><a href="#">당일 투표</a></li>
+                    </ul>
+                </li>
+                <li style="width:100px;"><a href="#">QnA</a>
+                    <ul>
+                        <li style="width:100px;"><a href="#">행사 진행</a></li>
+                        <li style="width:100px;"><a href="#">솔루션</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>

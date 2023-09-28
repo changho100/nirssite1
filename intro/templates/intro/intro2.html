@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로드쇼</title>
+</head>
+ <style>
+    .intro {position:absolute; z-index:-1;}
+    .left {background:#999999; width:200px; height:800px; float:left;}
+    .left_menu {list-style-type:none; padding-top:50px; padding-left:20px; font-size:20px; font-family:맑은 고딕;
+                font-weight:bold; font-color:#fff;}
+    .left_menu li {margin:0px; line-height:55px; font-color:#fff;}
+    .left_menu li:hover {background:#bfbfbf;}
+    .left_menu li a {color:#fff;}
+    .left_menu li a:hover {color:#d22730;}
+    .left_menu li ul {list-style-type:none;}
+    .left_menu li ul li {line-height:35px;}
+
+    .intro_contents {width:947px; height:800px; text-align:center; overflow:auto; float:right;}
+ </style>
+<body>
+{% load static %}
+{% include "./top.html" %}
+<div class="intro">
+    <div class="left">
+        <div style="font-weight:bold; color:white; font-family:맑은 고딕; background:#000;
+                    font-size:20px; width:200px; height:50px; text-align:center; display:table-cell;
+                    vertical-align:middle;">
+            로드쇼 소개
+        </div>
+         <ul class="left_menu" style="margin:0">
+             <li ><a href="/intro/" >전시 안내<br/></a></li>
+             <li style="background:#bfbfbf;"><a href="/intro/2">전시 항목</a>
+                 <ul>
+                     <li><a href="/intro/2" style="color:#d22730;">IoT</a></li>
+                     <li><a href="#">이동체 IoT</a></li>
+                     <li><a href="#">건설 IoT</a></li>
+                     <li><a href="#">스마트에너지</a></li>
+                     <li><a href="#">통합보안</a></li>
+                     <li><a href="#">차세대 IT</a></li>
+                     <li><a href="#">차세대 NW</a></li>
+                     <li><a href="#">AI</a></li>
+                 </ul>
+             </li>
+             <li><a href="#">전시장 MAP</a></li>
+         </ul>
+    </div>
+    <div class="intro_contents">
+        <div style="height:50px; weight:947px;">
+
+        </div>
+        <img src="{% static 'img/ready.png' %}" width="700px" height="700px"/>
+    </div>
+    <div>
+        <img src="{% static 'img/main_foot.png' %}"/>
+    </div>
+</div>
+
+</body>
+</html>

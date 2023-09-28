@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+
+ <style>
+    .intro {position:absolute; z-index:-1;}
+    .left {background:#17345a; width:200px; height:800px; float:left;}
+    .left_menu {list-style-type:none; padding-top:20px; padding-left:0px; font-size:11pt; font-family:맑은 고딕;
+                font-weight:bold; font-color:#fff;}
+    .left_menu li {margin:0px; line-height:40px; font-color:#fff; padding-left:20px; }
+    .left_menu li a {color:#fff;}
+    .left_menu li a:hover {color:#d22730;}
+    .left_menu li ul {display:none;  list-style-type:none; margin-left:-60px; font-size:10pt;}
+
+    .left_menu li ul li {line-height:35px;  padding-left:35px;}
+
+    .intro_contents {width:947px; height:800px; text-align:center; overflow:auto; float:right;}
+    .map_table {border-collapse:collapse; font-family:맑은 고딕; font-weight:bold; text-align;center; border: 1px solid #000; padding:0;}
+    .map_table tr th {padding:2px; margin:0; background:#ccc; border:1px solid #000;}
+    .map_table tr td {padding:2px; margin:0; border:1px solid #000;}
+    .map_table a:hover {color:red;}
+ </style>
+<script type="text/javascript">
+     function OnloadImg(evt, imgid){
+         tabcontent_active = document.getElementById(imgid);
+         tabcontent_active.style.display = "block";
+    }
+    function closeimg(evt){
+        evt.currentTarget.style.display = "none";
+    }
+
+</script>
+<body>
+{% load static %}
+{% include "mpage/top.html" %}
+<div class="intro">
+    <div class="left">
+        <div style="color:white; font-family:맑은 고딕; background:#294860;
+                    font-size:13pt; width:200px; height:50px; text-align:center; display:table-cell;
+                    vertical-align:middle; border-bottom:4px solid #091d3e;">
+            행사 소개
+        </div>
+         <ul class="left_menu" style="margin:0">
+             <li><a href="/intro/">자율주행차<br/></a></li>
+             <li style="background:#091d3e;"><a href="/intro/map" style="color:#fff;" >운행 경로</a></li>
+         </ul>
+    </div>
+    <div class="intro_contents">
+
+        <div class="contents">
+            {% block contents %}
+            <p style="text-align:center; font-family:맑은 고딕; font-weight:bold; font-size:16pt;">전시장 MAP</p>
+            <img src="/static/img/layout_img.png" style="width:850px; margin-top:-20px;"/>
+            <p style="float:right; margin-top:-2px; margin-bottom:2px; width:850px; text-align:right; padding-right:70px;">※ 솔루션 클릭 시, 해당 부스가 나옵니다.</p>
+            <div style="width:410px; margin-left:35px; float:left;">
+                <table class="map_table">
+                    <tr>
+                        <th style="width:30px;">No.</th>
+                        <th style="width:140px;">Zone</th>
+                        <th style="width:230px;">부스명</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td rowspan="3">Biz IoT</td>
+                        <td><div onclick="OnloadImg(event, 'iotmakers')"><a href="#">IoT Makers 3.0</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><div onclick="OnloadImg(event, 'small')"><a href="#">소물인터넷 서비스</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><div onclick="OnloadImg(event, 'vertical')"><a href="#">Vertical IoT 서비스</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td rowspan="3">차량/이동체</td>
+                        <td><div onclick="OnloadImg(event, 'connected')"><a href="#">Connected Car</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><div onclick="OnloadImg(event, 'asset')"><a href="#">물류/Asset Tracking</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><div onclick="OnloadImg(event, 'hundai')"><a href="#">현대상용차 내비</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Big Data</td>
+                        <td><div onclick="OnloadImg(event, 'grip')"><a href="#">Grip/Trip/위치최적화솔루션</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>농업 IoT</td>
+                        <td><div onclick="OnloadImg(event, 'smartfarm')"><a href="#">KT GiGA Smart Farm</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td rowspan="2">스마트 에너지</td>
+                        <td><div onclick="OnloadImg(event, 'building')"><a href="#">건물 운영 관리 솔루션</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><div onclick="OnloadImg(event, 'energy')"><a href="#">기가 에너지 프리미엄</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>데이터 시각화</td>
+                        <td><div onclick="OnloadImg(event, 'data')"><a href="#">데이터 시각화 솔루션</a></div></td>
+                    </tr>
+                </table>
+            </div>
+            <div style="width:410px; margin-left:25px; float:left;">
+                <table class="map_table">
+                    <tr>
+                        <th style="width:30px;">No.</th>
+                        <th style="width:140px;">Zone</th>
+                        <th style="width:230px;">부스명</th>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td rowspan="3">Biz 솔루션</td>
+                        <td><div onclick="OnloadImg(event, 'managed')"><a href="#">Managed 서비스</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td><div onclick="OnloadImg(event, 'ims')"><a href="#">IMS 통합관제</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td><div onclick="OnloadImg(event, 'bills')"><a href="#">IoT BILLS</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td rowspan="2">통합 관제</td>
+                        <td><div onclick="OnloadImg(event, 'argos')"><a href="#">ARGOS 2.0</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td><div onclick="OnloadImg(event, 'allinbiz')"><a href="#">All-in Biz</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td rowspan="2">차세대 NW</td>
+                        <td><div onclick="OnloadImg(event, 'bizwifi')"><a href="#">Biz WiFi</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td><div onclick="OnloadImg(event, 'onebox')"><a href="#">One-Box</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td rowspan="4">AI</td>
+                        <td><div onclick="OnloadImg(event, 'aibot')"><a href="#">AIBOT</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td><div onclick="OnloadImg(event, 'hint')"><a href="#">HINT</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td><div onclick="OnloadImg(event, 'kiosk')"><a href="#">AI Kiosk</a></div></td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td><div onclick="OnloadImg(event, 'sinage')"><a href="#">지능형 사이니지</a></div></td>
+                    </tr>
+                </table>
+            </div>
+            <img src="/static/img/boo_iotmakers.png" id="iotmakers" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_small.png" id="small" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_vertical.png" id="vertical" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_connected.png" id="connected" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_asset.png" id="asset" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_hundai.png" id="hundai" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_grip.png" id="grip" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_smartfarm.png" id="smartfarm" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_building.png" id="building" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_energy.png" id="energy" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_data.png" id="data" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_managed.png" id="managed" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_ims.png" id="ims" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_bills.png" id="bills" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_argos.png" id="argos" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_allinbiz.png" id="allinbiz" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_bizwifi.png" id="bizwifi" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_onebox.png" id="onebox" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_aibot.png" id="aibot" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_hint.png" id="hint" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_kiosk.png" id="kiosk" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+            <img src="/static/img/boo_sinage.png" id="sinage" style="display:none; position:absolute; left:22%; top:20%;" onclick="closeimg(event)"/>
+
+            {% endblock %}
+        </div>
+
+    </div>
+    <div>
+        <img src="{% static 'img/main_foot.png' %}"/>
+    </div>
+</div>
+
+</body>
+</html>

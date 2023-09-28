@@ -1,0 +1,37 @@
+{% extends "intro_item.html" %}
+
+{% block contents %}
+<div class="tab">
+  <button {% if tab_id == '1' %}class="tablinks active" {% else %} class="tablinks" {% endif %} onclick="openCity(event, 'first')">ARGOS 2.0</button>
+  <button {% if tab_id == '2' %}class="tablinks active" {% else %} class="tablinks" {% endif %} onclick="openCity(event, 'second')">All-in Biz</button>
+  <div style="float:right;">
+      <a href="/intro/items"><img src="/static/img/solution_button.png" width="80px" height="40px"/></a>
+  </div>
+</div>
+
+<div id="first" {% if tab_id == '1' %}class="tabcontent_active" {% else %} class="tabcontent" {% endif %}>
+  <div style="overflow-y:scroll; height:720px; width:880px; margin-left:60px;" id="divid1">
+    <div style="float:right; margin-right:50px;">
+      <a href="/static/video/argos.MP4" target="_blank"><img src="/static/video/video.png"/></a>
+    </div>
+    <img src="/static/img/intro/argos_intro.png" style=""/>
+  </div>
+</div>
+
+<div id="second" {% if tab_id == '2' %}class="tabcontent_active" {% else %} class="tabcontent" {% endif %}>
+  <div style="overflow-y:scroll; height:720px; width:880px; margin-left:60px;" id="divid2">
+    <img src="/static/img/intro/AllinBiz_intro.png" style=""/>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
